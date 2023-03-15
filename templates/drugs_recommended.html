@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>WellBeing</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='image/breast-cancer.ico.ico') }}" type="image/png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/4.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <header class="header" data-aos="zoom-out">
+
+        <nav class="navbar">
+            <a href="/drugs_recommended">Drugs</a>
+            <a href="/">Home</a>
+        </nav>
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+    </header>
+    <br><br>
+    <title>Drugs</title>
+</head>
+
+<body>
+    <br><br>
+    <h1> Medicine Recommened For You </h1><br>
+    <style>
+        body {
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            color: #D72363;
+        }
+
+        /* apply styles to the table */
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 70%;
+        }
+
+        /* apply styles to the table cells */
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        /* apply styles to the table header cells */
+        th {
+            background-color: #dddddd;
+        }
+
+        /* add hover style to the table rows */
+        tr:hover {
+            background-color: #d1caca;
+        }
+
+        .header {
+            padding: 0.5rem 9%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff;
+        }
+
+        .header .navbar a {
+            font-size: 1.2rem;
+            color: var(--light-color);
+            margin-left: 25rem;
+            text-decoration: none;
+        }
+
+        .header .navbar a:hover {
+            color: var(--pink);
+        }
+
+        .home {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding-top: 10rem;
+        }
+
+        .home span1 {
+            text-transform: uppercase;
+            color: var(--pink);
+        }
+
+        .content {
+            width: 550px;
+            margin: auto;
+            position: relative;
+            top: 80px;
+            font-family: 'Roboto', sans-serif;
+            color: black;
+        }
+
+        .title {
+            text-align: right;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 40px;
+            font-weight: bold;
+        }
+    </style>
+    </head>
+
+    <table align="center">
+        <tr>
+            {% for column in header %}
+            <th>{{ column }}</th>
+            {% endfor %}
+        </tr>
+        {% for row in data %}
+        <tr>
+            {% for cell in row %}
+            <td>{{ cell }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+
+</html>

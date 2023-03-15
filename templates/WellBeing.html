@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='image/breast-cancer.ico.ico') }}" type="image/png" />
+    <title>WellBeing </title>
+
+    <!-- aos css file cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- header section starts  -->
+
+    <header class="header" data-aos="zoom-out">
+
+        <div class="image">
+            <img src="{{ url_for('static', filename='image/breast-cancer-icon.png') }}" alt="">
+            <a> WellBeing</a>
+
+        </div>
+
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="/customer_support">Customer Support</a>
+            <a href="#footer">Contact Us</a>
+        </nav>
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- home section starts  -->
+
+    <section class="home" id="home">
+
+        <div class="image" data-aos="fade-right">
+            <img src="{{ url_for('static', filename='image/breast-cancer.svg') }}" alt="">
+        </div>
+
+        <div class="content" data-aos="fade-left">
+            <h3>Early <span1> Detection </span1>
+            </h3>
+            <h3> For Your <span1> Protection </span1>
+            </h3>
+            <p></p>
+            <a href="/test" class="btn"> Check the result <span class="fas fa-chevron-right"></span> </a>
+        </div>
+
+    </section>
+
+    <!-- home section ends -->
+
+    <!-- about section starts  -->
+
+    <section class="about" id="about">
+
+        <h1 class="heading"> <span>about</span> us </h1>
+
+        <div class="row">
+
+            <div class="image" data-aos="fade-right">
+
+                <img src="{{ url_for('static', filename='image/Laboratory.png') }}" alt="" align="right">
+            </div>
+
+            <div class="content" data-aos="fade-left">
+                <h3>
+                    <span2>WellBeing</span2>
+                </h3>
+                <h3>The results you can trust!</h3>
+                <p>We believe that early diagnosis of Breast Cancer and the accurate classification of benign tumors can
+                    improve and prevent patients undergoing unnecessary treatments.</p>
+                <p>Also WellBeing is here to provide you with the accurate Chest X-Rays Analyizing.</p>
+                <a href="/base" class="btn"> Chest X-Rays Analizer <span class="fas fa-chevron-right"></span> </a>
+                <a href="/drugs_recommended" class="btn"> Drugs Review <span class="fas fa-chevron-right"></span> </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- about section ends -->
+
+    <!-- footer section starts  -->
+
+    <section class="footer" id="footer">
+
+        <div class="box-container">
+
+            <div class="box" data-aos="fade-up">
+                <h3>Contact Info.</h3>
+                <a href="#footer"> <i class="fas fa-phone"></i> +20 120-4282-542 </a>
+                <a href="#footer"> <i class="fas fa-envelope"></i> OurTeam@gmail.com </a>
+                <a href="#footer"> <i class="fas fa-map-marker-alt"></i> Mansoura, Egypt </a>
+
+            </div>
+            <div class="box" data-aos="fade-up">
+                <h3>Our Team</h3>
+                <a href="#footer"> <i class="fas fa-id-card"></i> Nada Gamal </a>
+                <a href="#footer"> <i class="fas fa-id-card"></i> Mayada Ramadan </a>
+                <a href="#footer"> <i class="fas fa-id-card"></i> Rana Abdo </a>
+            </div>
+
+        </div>
+
+        <div class="credit"> Supervised by <span>Dr. Ahmed Salah </span> </div>
+
+    </section>
+
+    <!-- footer section ends -->
+
+    <!-- aos js file cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+
+    <!-- custom js file link  -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    <script>
+
+        AOS.init({
+            duration: 1000,
+            delay: 400
+        });
+
+    </script>
+
+</body>
+
+</html>

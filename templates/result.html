@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='image/breast-cancer.ico.ico') }}" type="image/png" />
+    <title>WellBeing-result </title>
+
+    <!-- aos css file cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    </head>
+
+</head>
+
+<body>
+
+    <!-- header section starts  -->
+
+    <header class="header" data-aos="zoom-out">
+
+        <div class="image">
+            <img src="{{ url_for('static', filename='image/breast-cancer-icon.png') }}" alt="">
+            <a> WellBeing</a>
+
+        </div>
+
+        <nav class="navbar">
+            <a href="/">Home</a>
+            <a href="/disease_info">Disease_Info</a>
+            <!-- <a href="/help">help</a>  -->
+            <a href="#footer">Contact Us</a>
+        </nav>
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- result section starts   -->
+
+    <section onsubmit="{{ url_for('result') }}" class="result" id="result">
+
+        <div class="heading" data-aos="fade-up">
+            <h1> <span>Fill </span> in <span>your</span> data</h1>
+        </div>
+
+        <div class="row" data-aos="flip-down">
+
+            <div class="image">
+                <img src="{{ url_for('static', filename='image/research.svg') }}">
+            </div>
+
+            <form method="post" class="testing" action="{{ url_for('result') }}">
+                <!-- onsubmit="myfunction( output )" -->
+                <h3> Check your Results</h3>
+
+                <input type="text" placeholder="Username" class="box" name="name">
+                <input type="number" placeholder="Perimeter Worst  ~Ex: 103.961111" class="box" name="Perimeter"
+                    required max="402" min="20" step="0.0001">
+                <input type="number" placeholder="Area Worst  ~Ex: 820.704848" class="box" name="Area" required
+                    max="6808" min="73" step="0.0001">
+                <input type="number" placeholder="Radius Worst  ~Ex: 15.846776" class="box" name="Radius" required
+                    max="58" min="3" step="0.0001">
+                <input type="number" placeholder="Concave Points Worst  ~Ex: 0.106625" class="box" name="Concave_Points"
+                    required max="0.5" min="0" step="0.0001">
+                <input type="submit" value="Check" class="btn">
+                <!-- -->
+            </form>
+            <!-- <p>{{ prediction_text }}</p> -->
+        </div>
+    </section>
+    <!-- result section ends -->
+
+    <!-- footer section starts  -->
+
+    <section class="footer" id="footer">
+
+        <div class="box-container">
+
+            <div class="box" data-aos="fade-up">
+                <h3>Contact Info.</h3>
+                <a href="#footer"> <i class="fas fa-phone"></i> +20 120-4282-542 </a>
+                <a href="#footer"> <i class="fas fa-envelope"></i> OurTeam@gmail.com </a>
+                <a href="#footer"> <i class="fas fa-map-marker-alt"></i> Mansoura, Egypt </a>
+
+            </div>
+            <div class="box" data-aos="fade-up">
+                <h3>Our Team</h3>
+                <a href="#footer"> <i class="fas fa-id-card"></i> Nada Gamal </a>
+                <a href="#footer"> <i class="fas fa-id-card"></i> Mayada Ramadan </a>
+                <a href="#footer"> <i class="fas fa-id-card"></i> Rana Abdo </a>
+            </div>
+
+        </div>
+
+        <div class="credit"> Supervised by <span> Dr. Ahmed Salah </span> </div>
+
+    </section>
+
+    <!-- footer section ends -->
+
+    <!-- aos js file cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- custom js file link  -->
+    <script src="{{ url_for('static', filename='js/result.js') }}"></script>
+
+    <script>
+
+        AOS.init({
+            duration: 1000,
+            delay: 400
+        });
+
+    </script>
+
+    <script>
+        let output = '{{ prediction_text }}'
+
+        if (output === 'The Tumor is Malignant')
+            window.alert(output)
+
+        else if (output === 'The Tumor is Benign')
+            window.alert(output)
+
+        console.log(output)
+    </script>
+
+
+</body>
+
+</html>
